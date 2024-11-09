@@ -28,3 +28,6 @@ Here's the script that I've generated for the player movement to work:
 }
 
 However, wrapping my head around Time.deltaTime was a chore to understand. It was easily one of the most difficult parts of the project, as I was stuck for its purpose being in that specific block of code in the first place. But thanks to the unity documentation, and I now recognize that it's a variable Unity has built on its own, and its purpose was to make the game run smoothly and somewhat at a similar speed, even if the players are experiencing the game on different devices (it's also helps knowing that we use it when updating or moving the game).
+
+
+## 2024-10-29
