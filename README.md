@@ -7,7 +7,7 @@ I was creating a new repository. I created a test. Not sure how to delete it tho
 
 ## 2024-10-21
 
-For this tutorial, I've learned how to program the player movement in Unity. I didn't face any particular problems during development, and it was easier to digest and apply what I've learned in this tutorial from the script with ease. So for example, code like **public float speed = 10;** and the **float inputX = Input.GetAxis("Horizontal");** & **float inputY = Input.GetAxis("Vertical");** were pretty easy to jot down off by heart (granted I was confused with what **Input.GetAxis** at the time, but what helped me overcome my confusion was understanding that it's a method that handles the user input. It involves the rotation and movement of the player. What I love the most is that even if I still am confused, I can use the unity documentation to gain further understanding of its function) considering I already garnered knowledge from researching tutorials from coding off of sessions.
+This is the first tutorial that I've done for this session, and I've learned how to program the player movement in Unity. I didn't face any particular problems during development, and it was easier to digest and apply what I've learned in this tutorial from the script with ease. So for example, code like **public float speed = 10;** and the **float inputX = Input.GetAxis("Horizontal");** & **float inputY = Input.GetAxis("Vertical");** were pretty easy to jot down off by heart (granted I was confused with what **Input.GetAxis** at the time, but what helped me overcome my confusion was understanding that it's a method that handles the user input. It involves the rotation and movement of the player. What I love the most is that even if I still am confused, I can use the unity documentation to gain further understanding of its function) considering I already garnered knowledge from researching tutorials from coding off of sessions.
 
 I don't know much about the basics of C# besides mastering my understanding of variables (but besides that, there are still many topics in C# to unpack and learn from). During my free time I've tried to learn how to code, but reading scripts and digesting information felt uneasy. But, I felt like my knowledge of C# and unity (for someone who knows little of it) has increased thanks to this tutorial, and understanding aspects of programming has become a lot easier with me.
 
@@ -30,3 +30,11 @@ However, wrapping my head around Time.deltaTime was a chore to understand. It wa
 
 
 ## 2024-10-29
+
+For the second tutorial, I've learned how to implement the pick-up mechanic and add coins in unity (building a sort of 3D side-scrolling platformer (granted positioned in a 2D perspective) for my game). Essentially, I've taken what I've made for my first tutorial on player movement and adding new features, paying homage to basic platform games (like Mario, Sonic, Crash Bandicoot etc...). 
+
+This was a session I was interested with, but faced the most difficulties on, almost to the point where I wanted to quite and move on to the next session. There were sections in the tutorial were I felt lost on where handling the prefabs for the coin objects (changing the colour of the coin to gold). There were also unusual ways the game turned out to be in terms of the coins movements that I was completely stuck on when scripting the coins movement. The speed was working perfectly fine. But whenever I tried to run the game, rather then the coins stay in one place and spin at the same time, they all move around the platform in a circle- and they don't spin in the way it was supposed to spin? 
+
+It's hard for me to explain the overall issue I had when running the game, but I'll give you a visual aid for it: 
+
+![Screen Recording 2024-11-10 at 21 10 35](https://github.com/user-attachments/assets/0bc79da7-35df-4e19-9207-94d5bdfa1f4e)
