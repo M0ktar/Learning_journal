@@ -43,7 +43,7 @@ I've learned the GetInput.Key a little bit more (and a little bit better) and th
         }
     }
 
-This was a session I was interested with, but faced the most difficulties on, almost to the point where I wanted to quite and move on to the next session. There were sections in the tutorial were I felt lost on where handling the prefabs for the coin objects (changing the colour of the coin to gold). There were also unusual ways the game turned out to be in terms of the coins movements that I was completely stuck on when scripting the coins movement. The speed was working perfectly fine. But whenever I tried to run the game, rather then the coins stay in one place and spin at the same time, they all move around the platform in a circle- and they don't spin in the way it was supposed to spin? 
+This was a session I was interested with, but faced the most difficulties on, almost to the point where I wanted to quit and move on to the next session. There were sections in the tutorial where I felt lost in where handling the prefabs for the coin objects (changing the colour of the coin to gold). There were also unusual ways the game turned out to be regarding the movements of the coins, which I was completely stuck on when scripting the coin's movement. The speed was working perfectly fine. But whenever I tried to run the game, rather than the coins staying in one place and spinning simultaneously, they all moved around the platform in a circle- and they didn't spin in the way it was supposed to spin.
 
 It's hard for me to explain the overall issue I had when running the game, but I'll give you a visual aid for it: 
 
@@ -53,11 +53,11 @@ I decided to backtrack to the tutorial online, and decide to delete the script a
 
 ![Screen Recording 2024-11-11 at 17 17 44](https://github.com/user-attachments/assets/8dca35b9-a4e7-4e35-a176-87eb54c5f2ec)
 
-<u>What were the issue I had to overcome:</u>
-- I didn't change the cylinder collider to the sphere collider at all, which it probably why the coins looked 2D
-- I realized that you can add in a new material to unity, which in tern allows me to edit/render the colours of the object (this part I found the most difficult to complete)
-- The reason why the objects were spinning in that way from the initial clip was because I accidently made each of the five duplicated coins as child objects, and assigned all of them into a parent object (which is what the first coin was).
+<u>What were the issues I had to overcome:</u>
+- I didn't change the cylinder collider to the sphere collider at all, which is probably why the coins looked 2D
+- I realized that you can add new material to unity, which in turn allows me to edit/render the colours of the object (this part I found the most difficult to complete)
+- The reason why the objects were spinning in that way from the initial clip was that I accidentally made each of the five duplicated coins as child objects, and assigned all of them to a parent object (which is what the first coin was).
 
-So when scripting the game for the second tutorial, I thought there were problems with the way I was scripting my projects. Instead there were issues with more on how I was misleadingly navigating areas in unity outside of coding. I've learned that not only my understanding of code needs to be improved upon (which is going successfully thus far), but my knowledge on unity needs to be improved upon too.
+So when scripting the game for the second tutorial, I thought there were problems with the way I was scripting my projects. Instead, there were issues with more on how I was misleadingly navigating areas in unity outside of coding. I've learned that not only my understanding of code needs to be improved upon (which is going successfully thus far), but my knowledge of unity needs to be improved upon too.
 
 ## 2024-11-04
