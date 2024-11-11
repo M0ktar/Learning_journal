@@ -38,3 +38,5 @@ This was a session I was interested with, but faced the most difficulties on, al
 It's hard for me to explain the overall issue I had when running the game, but I'll give you a visual aid for it: 
 
 ![Screen Recording 2024-11-10 at 21 10 35](https://github.com/user-attachments/assets/0bc79da7-35df-4e19-9207-94d5bdfa1f4e)
+
+I decided to backtrack to the tutorial online, and decide to delete the script and objects for the pick-up coin. Through constant trial an error,
