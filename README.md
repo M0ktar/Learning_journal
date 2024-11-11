@@ -31,7 +31,17 @@ However, wrapping my head around Time.deltaTime was a chore to understand. It wa
 
 ## 2024-10-29
 
-For the second tutorial, I've learned how to implement the pick-up mechanic and add coins in unity (building a sort of 3D side-scrolling platformer (granted positioned in a 2D perspective) for my game). Essentially, I've taken what I've made for my first tutorial on player movement and adding new features, paying homage to basic platform games (like Mario, Sonic, Crash Bandicoot etc...). 
+For the second tutorial, I've learned how to implement the pick-up mechanic and add coins in unity (building a sort of 3D side-scrolling platformer (granted positioned in a 2D perspective) for my game). Essentially, I've taken what I've made for my first tutorial on player movement and adding new features, paying homage to basic platform games (like Mario, Sonic, Crash Bandicoot etc...).
+
+I've learned the GetInput.Key a little bit more (and a little bit better) and the force method while re-scripting the player movement (changing movement keys from using left to right stick (or alternatively A and D), to only pressing the spacebar- which was the goal when producing the script)
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            body.AddForce(Vector3.right * force, ForceMode.Impulse);
+        }
+    }
 
 This was a session I was interested with, but faced the most difficulties on, almost to the point where I wanted to quite and move on to the next session. There were sections in the tutorial were I felt lost on where handling the prefabs for the coin objects (changing the colour of the coin to gold). There were also unusual ways the game turned out to be in terms of the coins movements that I was completely stuck on when scripting the coins movement. The speed was working perfectly fine. But whenever I tried to run the game, rather then the coins stay in one place and spin at the same time, they all move around the platform in a circle- and they don't spin in the way it was supposed to spin? 
 
@@ -39,4 +49,15 @@ It's hard for me to explain the overall issue I had when running the game, but I
 
 ![Screen Recording 2024-11-10 at 21 10 35](https://github.com/user-attachments/assets/0bc79da7-35df-4e19-9207-94d5bdfa1f4e)
 
-I decided to backtrack to the tutorial online, and decide to delete the script and objects for the pick-up coin. Through constant trial an error,
+I decided to backtrack to the tutorial online, and decide to delete the script and objects for the pick-up coin. Through constant trial an error, I've thankfully overcame those issues. This is now what it looks like (and what it should've looked like):
+
+![Screen Recording 2024-11-11 at 17 17 44](https://github.com/user-attachments/assets/8dca35b9-a4e7-4e35-a176-87eb54c5f2ec)
+
+<u>What were the issue I had to overcome:</u>
+- I didn't change the cylinder collider to the sphere collider at all, which it probably why the coins looked 2D
+- I realized that you can add in a new material to unity, which in tern allows me to edit/render the colours of the object (this part I found the most difficult to complete)
+- The reason why the objects were spinning in that way from the initial clip was because I accidently made each of the five duplicated coins as child objects, and assigned all of them into a parent object (which is what the first coin was).
+
+So when scripting the game for the second tutorial, I thought there were problems with the way I was scripting my projects. Instead there were issues with more on how I was misleadingly navigating areas in unity outside of coding. I've learned that not only my understanding of code needs to be improved upon (which is going successfully thus far), but my knowledge on unity needs to be improved upon too.
+
+## 2024-11-04
