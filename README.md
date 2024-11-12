@@ -61,3 +61,10 @@ I decided to backtrack to the tutorial online, and decide to delete the script a
 So when scripting the game for the second tutorial, I thought there were problems with the way I was scripting my projects. Instead, there were issues with more on how I was misleadingly navigating areas in unity outside of coding. I've learned that not only my understanding of code needs to be improved upon (which is going successfully thus far), but my knowledge of unity needs to be improved upon too.
 
 ## 2024-11-04
+
+Raycasting
+
+
+## 2024-11-11
+Developing a top-down 2D zelda like project. i jotted down the movement of the player pretty easily (thanks to the previous tutorial and my practice on applying movement for the player).
+My task for this tutorial was to create specific mechanics for this project (less about making the actual game, more so experimenting with features I could adjust to when I get to creating my prototype) in order to feel comfortable creating my own prototype.
