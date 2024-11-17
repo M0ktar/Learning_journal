@@ -62,9 +62,57 @@ So when scripting the game for the second tutorial, I thought there were problem
 
 ## 2024-11-04
 
-Raycasting
+
 
 
 ## 2024-11-11
-Developing a top-down 2D zelda like project. i jotted down the movement of the player pretty easily (thanks to the previous tutorial and my practice on applying movement for the player).
+Developing a top-down 2D zelda like project. i jotted down the movement of the player pretty easily (thanks to the previous tutorial).
 My task for this tutorial was to create specific mechanics for this project (less about making the actual game, more so experimenting with features I could adjust to when I get to creating my prototype) in order to feel comfortable creating my own prototype.
+
+When working on this tutorial, I was able to script the player movement on a 2D canvas this time, and have the player use a weapon to attack an enemy (Hindsight, this is incredibly unpolished, though in the future I will be working on that to some point during later parts of the tutorial). I've also learned the coolDown, and Vector2 a little bit more (such as the Vector2.zero) and recently Quaternion. I've also learned about the method Physics2D.OverlapBoxAll when scripting my sword object as well.
+
+This is what I've worked on today's session:
+
+![Screen Recording 2024-11-17 at 13 06 04](https://github.com/user-attachments/assets/53fe45af-9b71-40fe-95a3-77c9a15ed7b4)
+
+This is the script for the sword I've worked on (which I felt was one of the most challenging parts to do):
+    
+    public Transform swordTransform;
+    public float attackSpeed = 5f;
+    private float attackCooldown = -0.1f;
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Z) && attackCooldown <= 0f)
+        {
+            Attack();
+            attackCooldown = attackSpeed;
+        }
+
+        attackCooldown -= Time.deltaTime;
+    }
+
+    void Attack()
+    {
+        swordTransform.Rotate(Vector2.left * 90f);
+
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(swordTransform.position, new Vector2(1f, 1f), 0f);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.CompareTag("Enemy"))
+            {
+                Destroy(enemy.gameObject);
+            }
+        }
+
+    }
+
+There were a few issues I faced that didn't felt right during development. I felt like the one of the challenges for me was to make the player move WITH the sword. I fixed this by using the heirachy tool and assigned the parent and child tool (which was an issue I faced last time). It was a challenge because it literally took me a consider amount of my time to figure out on how I could fix this issue. At first I thought it had something to do with programming, but no it was just something I had to re-adjust with unity. There was also a challenge, and a little bit harder, on understanding the coolDown variable, and how it worked when programming my sword. I understand now that it's used for when player has time to take a small short break when attacking for a limited amount of time. So basically understanding the variable and what it means in gameplay *private float attackCooldown = -0.1f;*. 
+
+This isn't the best, but I'm content with what I have so far with this tutorial so far. I'm hoping to polish the game when working on my prototype a lot more, this is just preperation for what's to come when working on my prototype. In the future, when working on the prototype, I could maybe fix the way the sword is function. So probably instead of attacking the enemy in one direction, I could attack by facing in four (depending on the direction the player is facing), or how I could fix more on how the sword appears when the player presses the attack button (the framework for how the sword appears and disappears is a bit too quick, so I'll get on that later on).
