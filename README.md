@@ -62,8 +62,38 @@ So when scripting the game for the second tutorial, I thought there were problem
 
 ## 2024-11-04
 
+With this tutorial, I was able to create a first-person point and click game- where the player is able to control the camera in first person perspective. I followed a tutorial made by brickey, which taught me how to program first person movement in unity. When looking through his code, I think the least hardest part for me was to wrap my head around some aspects of the code that he implemented. New stuff that was introduced to me like Mathf.Clamp and the Quaternion structure (which I now know is always relevent to rotation when working/scripting in unity). Here's the code that I was working on when programming the camera movement for the player: 
 
+    public float sensX;
+    public float senseY;
+    public float mouseSensitivty = 100f;
 
+    public Transform playerBody;
+
+    float xRotation = 0f;
+    float yRotation;
+    // Start is called before the first frame update
+    void Start()
+    {
+    //Hides the cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //mouse input for the player
+        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivty * sensX;
+        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivty * senseY;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        playerBody.Rotate(Vector3.up * mouseX);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+I also added the player movement (of course) in the player game object, which is basically the same code that I've done from a previous tutorial. 
 
 ## 2024-11-11
 Developing a top-down 2D zelda like project. i jotted down the movement of the player pretty easily (thanks to the previous tutorial).
