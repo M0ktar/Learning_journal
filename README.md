@@ -93,7 +93,34 @@ With this tutorial, I was able to create a first-person point and click game- wh
         playerBody.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-I also added the player movement (of course) in the player game object, which is basically the same code that I've done from a previous tutorial. One of the biggest issues that I've faced (which I got help from) was the camera, and how it was only applying the movement for the x-axis but not the y-axis. The problem was solved once I realised that the rigidbody and the transform components in my script are assigned differently in unity, indicating that the player object is the player body and the transform component is the main camera object. The overall issue was that the player object was moving in one direction because I added the script in one object. Once I understood that, all I have to do is to add the script as a component to both the player object and main camera objects, and that's pretty much it.   
+I also added the player movement (of course) in the player game object, which is basically the same code that I've done from a previous tutorial. One of the biggest issues that I've faced (which I got help from) was the camera, and how it was only applying the movement for the x-axis but not the y-axis. The problem was solved once I realised that the rigidbody and the transform components in my script are assigned differently in unity, indicating that the player object is the player body and the transform component is the main camera object. The overall issue was that the player object was moving in one direction because I added the script in one object. Once I understood that, all I have to do is to add the script as a component to both the player object and main camera objects, and that's pretty much it.
+
+![Screen Recording 2024-11-26 at 12 33 39](https://github.com/user-attachments/assets/53c77a4b-c919-4188-a568-4b6d32c64acc)
+
+When programming the player movement, and following how Brackey scripted it, I wasn't supposed to just copy what the player movement script from the previous lecture. Changes had to be made in order to fit with the type of control I want for the game. I understood now that that specific type of code is applied towards platformers, meaning that when scripting the player only moves in a striaght line (two directions) instead of around. Here's the code that I imputed when making the movement for the game:
+
+    public CharacterController control;
+
+    public float speed = 5f; // Movement speed
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+    
+
+    void Update()
+    {
+        //Movement input
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");   
+
+        // Create a movement vector
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        // Move the player
+        transform.Translate(movement * speed * Time.deltaTime, Space.Self);
+    }
 
 ## 2024-11-11
 Developing a top-down 2D zelda like project. i jotted down the movement of the player pretty easily (thanks to the previous tutorial).
