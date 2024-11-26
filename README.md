@@ -93,7 +93,7 @@ With this tutorial, I was able to create a first-person point and click game- wh
         playerBody.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-I also added the player movement (of course) in the player game object, which is basically the same code that I've done from a previous tutorial. 
+I also added the player movement (of course) in the player game object, which is basically the same code that I've done from a previous tutorial. One of the biggest issues that I've faced (which I got help from) was the camera, and how it was only applying the movement for the x-axis but not the y-axis. The problem was solved once I realised that the rigidbody and the transform components in my script are assigned differently in unity, indicating that the player object is the player body and the transform component is the main camera object. The overall issue was that the player object was moving in one direction because I added the script in one object. Once I understood that, all I have to do is to add the script as a component to both the player object and main camera objects, and that's pretty much it.   
 
 ## 2024-11-11
 Developing a top-down 2D zelda like project. i jotted down the movement of the player pretty easily (thanks to the previous tutorial).
